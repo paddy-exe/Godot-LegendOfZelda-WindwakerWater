@@ -1,7 +1,6 @@
-[gd_resource type="VisualShader" load_steps=76 format=2]
+[gd_resource type="VisualShader" load_steps=62 format=2]
 
 [ext_resource path="res://Textures/WindWaker_T.jpeg" type="Texture" id=1]
-[ext_resource path="res://addons/shaderV/tools/sinTime.gd" type="Script" id=2]
 [ext_resource path="res://Textures/water_normal2.JPG" type="Texture" id=3]
 
 [sub_resource type="VisualShaderNodeColorConstant" id=1]
@@ -159,44 +158,6 @@ uniform_name = "Distortion"
 texture = ExtResource( 1 )
 
 [sub_resource type="VisualShaderNodeVectorScalarMix" id=59]
-
-[sub_resource type="VisualShaderNodeVectorOp" id=60]
-
-[sub_resource type="VisualShaderNodeVectorOp" id=61]
-operator = 2
-
-[sub_resource type="VisualShaderNodeVectorOp" id=62]
-operator = 2
-
-[sub_resource type="VisualShaderNodeInput" id=63]
-input_name = "normal"
-
-[sub_resource type="VisualShaderNodeCustom" id=64]
-default_input_values = [ 0, 1.0, 1, 1.0 ]
-script = ExtResource( 2 )
-
-[sub_resource type="VisualShaderNodeInput" id=65]
-input_name = "vertex"
-
-[sub_resource type="VisualShaderNodeVec3Uniform" id=66]
-uniform_name = "WaveDirection"
-
-[sub_resource type="VisualShaderNodeDotProduct" id=67]
-
-[sub_resource type="VisualShaderNodeScalarUniform" id=68]
-uniform_name = "WaveAmount"
-
-[sub_resource type="VisualShaderNodeVectorOp" id=69]
-operator = 2
-
-[sub_resource type="VisualShaderNodeVec3Uniform" id=70]
-uniform_name = "WaveOffset"
-
-[sub_resource type="VisualShaderNodeScalarUniform" id=71]
-uniform_name = "Speed"
-
-[sub_resource type="VisualShaderNodeInput" id=72]
-input_name = "time"
 
 [resource]
 code = "shader_type spatial;
@@ -443,37 +404,10 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -459, -91 )
+graph_offset = Vector2( -104.111, -81.7292 )
 modes/cull = 2
 flags/world_vertex_coords = true
 nodes/vertex/0/position = Vector2( 1260, 420 )
-nodes/vertex/2/node = SubResource( 65 )
-nodes/vertex/2/position = Vector2( -580, 120 )
-nodes/vertex/3/node = SubResource( 66 )
-nodes/vertex/3/position = Vector2( -600, 280 )
-nodes/vertex/4/node = SubResource( 67 )
-nodes/vertex/4/position = Vector2( -340, 180 )
-nodes/vertex/5/node = SubResource( 68 )
-nodes/vertex/5/position = Vector2( -600, 380 )
-nodes/vertex/6/node = SubResource( 69 )
-nodes/vertex/6/position = Vector2( -140, 240 )
-nodes/vertex/7/node = SubResource( 70 )
-nodes/vertex/7/position = Vector2( -540, 520 )
-nodes/vertex/8/node = SubResource( 71 )
-nodes/vertex/8/position = Vector2( -560, 640 )
-nodes/vertex/9/node = SubResource( 72 )
-nodes/vertex/9/position = Vector2( -560, 780 )
-nodes/vertex/11/node = SubResource( 60 )
-nodes/vertex/11/position = Vector2( 77, 360 )
-nodes/vertex/13/node = SubResource( 61 )
-nodes/vertex/13/position = Vector2( 554, 451 )
-nodes/vertex/14/node = SubResource( 62 )
-nodes/vertex/14/position = Vector2( 840, 480 )
-nodes/vertex/15/node = SubResource( 63 )
-nodes/vertex/15/position = Vector2( 500, 680 )
-nodes/vertex/16/node = SubResource( 64 )
-nodes/vertex/16/position = Vector2( -320, 660 )
-nodes/vertex/connections = PoolIntArray( 2, 0, 4, 0, 3, 0, 4, 1, 4, 0, 6, 0, 5, 0, 6, 1, 6, 0, 11, 0, 7, 0, 13, 1, 13, 0, 14, 0, 15, 0, 14, 1, 8, 0, 16, 0, 16, 0, 11, 1, 11, 0, 13, 0, 9, 0, 16, 1 )
 nodes/fragment/0/position = Vector2( 1240, 600 )
 nodes/fragment/7/node = SubResource( 42 )
 nodes/fragment/7/position = Vector2( 340, 300 )
