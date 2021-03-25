@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Models/Water.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Shaders/ZeldaWaterVisualShader.tres" type="Shader" id=2]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/UV_Scale = 5.0
+shader_param/noise_speed_upper_water = Vector3( 0.1, -0.1, 0 )
+shader_param/Distortion = Vector3( 0.15, 0.15, 0 )
+shader_param/texture_speed = 0.09
+shader_param/Dark_Water_Offset = Vector3( -0.1, 0.1, 0 )
+shader_param/noise_speed_down_water = Vector3( 0.1, -0.1, 0 )
+shader_param/texture_speed_down_water = 0.09
+
+[sub_resource type="ProceduralSky" id=2]
+sky_curve = 0.173869
+ground_curve = 0.0336359
+sun_color = Color( 0.839216, 0.819608, 0.352941, 1 )
+
+[sub_resource type="Environment" id=3]
+background_sky = SubResource( 2 )
+background_color = Color( 0.305882, 0.470588, 0.447059, 1 )
+
+[node name="Main" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.796962, 0.604029, 0, -0.604029, 0.796962, 0, 3.73875, 7.27133 )
+
+[node name="WaterPlane" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.358373, 0 )
+material/0 = SubResource( 1 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.736652, 0.369887, -0.566152, -0.0692339, 0.874015, 0.480941, 0.672719, -0.315089, 0.669454, -6.32938, 11.7492, 5.90106 )
+light_energy = 3.05
+shadow_enabled = true

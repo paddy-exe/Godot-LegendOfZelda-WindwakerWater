@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Shaders/ZeldaWaterVisualShader.tres" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/UV_Scale = 1.0
+shader_param/noise_speed_upper_water = null
+shader_param/Distortion = null
+shader_param/texture_speed = 0.05
+shader_param/Dark_Water_Offset = Vector3( -0.1, 0.1, 0 )
+shader_param/noise_speed_down_water = null
+shader_param/texture_speed_down_water = 0.05
